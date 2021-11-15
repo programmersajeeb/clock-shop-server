@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5git000
 
 
 // Middleware
@@ -52,9 +52,7 @@ async function run() {
     // ORDER POST API
     app.post('/orderProducts', async(req, res) =>{
       const orderProduct = req.body;
-      console.log(orderProduct);
       const result = await orderCollection.insertOne(orderProduct);
-      console.log(result);
       res.json(result);
     })
 
